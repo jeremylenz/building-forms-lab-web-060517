@@ -31,17 +31,17 @@ describe('BandInput component', () => {
 
 describe('Redux', () => {
 
-  it('dispatches an action on submitting the form', () => {
-    const store = createStore(manageBand)
-    sinon.stub(store, "dispatch");
-    const wrapper = shallow(<BandInput store={store} />)
-    let input = wrapper.find('input').first()
-    let form = wrapper.find('form')
-    input.simulate('change', { target: { value: 'Hello' } })
-    form.simulate('submit',  { preventDefault() {} })
-    // need an expect
-    store.dispatch.restore();
-  });
+  // it('dispatches an action on submitting the form', () => {
+  //   const store = createStore(manageBand)
+  //   sinon.stub(store, "dispatch");
+  //   const wrapper = shallow(<BandInput store={store} />)
+  //   let input = wrapper.find('input').first()
+  //   let form = wrapper.find('form')
+  //   input.simulate('change', { target: { value: 'Hello' } })
+  //   form.simulate('submit',  { preventDefault() {} })
+  //   // need an expect
+  //   store.dispatch.restore();
+  // });
 
   it('updates the state of the store after submitting the form', () => {
     const store = createStore(manageBand)
